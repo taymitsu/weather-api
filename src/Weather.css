@@ -1,0 +1,20 @@
+.Weather {
+  
+}
+
+.Weather > form > input {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid;
+  margin: 0;
+}
+
+.Weather > form > button { 
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+

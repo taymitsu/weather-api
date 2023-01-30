@@ -20,12 +20,45 @@ function Weather() {
         <button>Submit</button>
         </div>
 
-        <select onChange={e => setUnit(e.target.value)}>
+        <select 
+          value={unit}
+          onChange={e => setUnit(e.target.value)}
+        >
           <option value="metric">Celcius</option>
           <option value="imperial">Fahrenheit</option>
           <option value="standard">Kelvin</option>
         </select>
-        
+
+        <label>
+          <input 
+            type="radio"
+            name="unit"
+            checked={unit === 'metric'}
+            onChange={() => setUnit('metric')}
+          />
+          metric
+        </label>
+
+        <label>
+          <input 
+            type="radio"
+            name="unit"
+            checked={unit === 'imperial'}
+            onChange={() => setUnit('imperial')}
+          />
+          imperial
+        </label>
+
+        <label>
+          <input 
+            type="radio"
+            name="unit"
+            checked={unit === 'standard'}
+            onChange={() => setUnit('standard')}
+          />
+          standard
+        </label>
+
       </form>
     </div>
   )

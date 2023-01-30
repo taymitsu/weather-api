@@ -2,14 +2,14 @@
   
 }
 
-.Weather > form > input {
+.Weather > form input {
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid;
   margin: 0;
 }
 
-.Weather > form > button { 
+.Weather > form button { 
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid;
@@ -18,3 +18,6 @@
   color: white;
 }
 
+.Weather > form > select {
+  margin: 1rem 0;
+}

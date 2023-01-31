@@ -2,15 +2,32 @@ import { useState } from 'react';
 import './Weather.css'
 import RadioButton from './RadioButton'
 
+
 function Weather() {
 
   const[zip, setZip] = useState(' ')
   const[unit, setUnit] = useState(' ')
+  const[data, setData] = useState(null)
+
+  async function fetchWeather() {
+    //always returns a promise 
+    //promise needs await function() or functio().then()
+    const apikey = '1f2f8f7576287256b30ee482d96a6caa'
+    const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apikey}&units${unit}`
+    const res = await fetch(path)
+    const json = await res.json()
+
+    console.log(json)
+  }
 
   return (
     <div className="Weather">
-      <h1>{zip} {unit}</h1>
-      <form>
+      {data && <h1>{data.temp}</h1>}
+      <form onSubmit={e => {
+        e.preventDefault()
+        fetchWeather()
+
+      }}>
         <div>
         <input 
           placeholder="Enter Zipcode"
@@ -18,7 +35,7 @@ function Weather() {
           onChange={e => setZip(e.target.value)}
         />
 
-        <button>Submit</button>
+        <button type="submit">Submit</button>
         </div>
 
         <select 

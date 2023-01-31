@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Weather.css'
+import RadioButton from './RadioButton'
 
 function Weather() {
 
@@ -29,36 +30,28 @@ function Weather() {
           <option value="standard">Kelvin</option>
         </select>
 
-        <label>
-          <input 
-            type="radio"
-            name="unit"
-            checked={unit === 'metric'}
-            onChange={() => setUnit('metric')}
-          />
-          metric
-        </label>
+        <RadioButton 
+          label="metric"
+          name="unit"
+          checked={unit === 'metric'}
+          onChange={() => setUnit('metric')}
+        />
 
-        <label>
-          <input 
-            type="radio"
-            name="unit"
-            checked={unit === 'imperial'}
-            onChange={() => setUnit('imperial')}
-          />
-          imperial
-        </label>
+        <RadioButton 
+          label="imperial"
+          name="unit"
+          checked={unit === 'imperial'}
+          onChange={() => setUnit('imperial')}
+        />
 
-        <label>
-          <input 
-            type="radio"
-            name="unit"
-            checked={unit === 'standard'}
-            onChange={() => setUnit('standard')}
-          />
-          standard
-        </label>
+        <RadioButton 
+          label="standard"
+          name="unit"
+          checked={unit === 'standard'}
+          onChange={() => setUnit('standard')}
+        />
 
+      
       </form>
     </div>
   )
